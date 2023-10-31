@@ -20,8 +20,11 @@ async function getWeather() {
     }
   }
   
-  //document.addEventListener('DOMContentLoaded', getWeather);
-  document.addEventListener('DOMContentLoaded', function() {
-    getWeather(); // Optionally, you can fetch weather data on page load
-});
+  if (typeof document !== 'undefined') {
+    document.addEventListener('DOMContentLoaded', function() {
+      getWeather(); // Optionally, you can fetch weather data on page load
+    });
+  }
+  
+  module.exports = { getWeather }; // Export the function using CommonJS syntax
   
