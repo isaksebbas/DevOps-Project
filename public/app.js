@@ -4,7 +4,7 @@ console.log("app.js init");
 
 async function getWeather() {
     const apiKey = '546cc5dbc4624a37874173118233110'; // Replace with your WeatherAPI.com API key
-    const city = 'Helsinki'; // Replace with the desired city
+    const city = document.getElementById('cityInput').value;
   
     try {
       const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`);
@@ -20,5 +20,8 @@ async function getWeather() {
     }
   }
   
-  document.addEventListener('DOMContentLoaded', getWeather);
+  //document.addEventListener('DOMContentLoaded', getWeather);
+  document.addEventListener('DOMContentLoaded', function() {
+    getWeather(); // Optionally, you can fetch weather data on page load
+});
   
