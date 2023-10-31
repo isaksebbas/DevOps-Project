@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Website on Docker</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
+</head>
+<body>
+
+    <div class="container">
+        <h1>Weather Information</h1>
+        <div class="input-container">
+            <label for="cityInput">Enter City:</label>
+            <input type="text" id="cityInput">
+            <br>
+            <button onclick="getWeather()" id="getWeatherBtn">Get Weather</button>
+        </div>
+        <div class="weather-info">
+            <div id="temperature" class="info"></div>
+            <div id="description" class="info"></div>
+            <div id="wind" class="info"></div>
+            <img id="icon"></img>
+        </div>
+        <div id="icon"></div>
+    </div>
+    
+    <script src="/public/app.js"></script>
+</body>
+</html>
