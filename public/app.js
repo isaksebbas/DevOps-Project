@@ -12,9 +12,16 @@ async function getWeather() {
   
       const temperature = data.current.temp_c;
       const description = data.current.condition.text;
+      const icon = data.current.condition.icon;
+      const wind = data.current.wind_kph;
+      const windMetersPerSecond = (wind / 3.6).toFixed(2);;
+
   
       document.getElementById('temperature').textContent = `Temperature: ${temperature}°C`;
       document.getElementById('description').textContent = `Description: ${description}`;
+      document.getElementById('wind').textContent = `Wind speed (M/S): ${windMetersPerSecond}`;
+      document.getElementById('icon').src=icon;
+    
     } catch (error) {
       console.error('Error fetching weather data:', error);
     }
