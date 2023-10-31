@@ -1,5 +1,5 @@
 # Use an official Node runtime as the base image
-FROM node:14
+FROM arm64v8/node:16
 
 # Set the working directory inside the container
 WORKDIR /usr/src/app
@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3030
 
 # Define the command to run your app
-CMD ["node", "app.js"]
+CMD ["node", "server.js"]
